@@ -1,0 +1,43 @@
+{
+	"name": "@madeji/npm-package-test-1",
+	"version": "1.0.0",
+	"description": "A test for npm package",
+	"type": "module",
+	"main": "lib/index.cjs",
+	"exports": {
+		"import": {
+			"types": "./lib/types/index.d.ts",
+			"default": "./lib/index.esm.js"
+		},
+		"require": {
+			"types": "./lib/types/index.d.ts",
+			"default": "./lib/index.cjs"
+		}
+	},
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CissalcX-Ma/npm-package-test-1.git"
+	},
+	"keywords": [
+		"npm"
+	],
+	"author": "cissalcx",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/CissalcX-Ma/npm-package-test-1/issues"
+	},
+	"homepage": "https://github.com/CissalcX-Ma/npm-package-test-1#readme",
+	"devDependencies": {
+		"rollup": "^4.44.2",
+		"rollup-plugin-delete": "^3.0.1",
+		"rollup-plugin-typescript": "^1.0.1",
+		"rollup-plugin-typescript2": "^0.36.0",
+		"typescript": "^5.8.3"
+	}
+}
