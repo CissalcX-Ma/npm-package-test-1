@@ -18,7 +18,8 @@
 		"lib"
 	],
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"release-package": "npm run build && npx changeset publish"
 	},
 	"repository": {
 		"type": "git",
@@ -34,6 +35,7 @@
 	},
 	"homepage": "https://github.com/CissalcX-Ma/npm-package-test-1#readme",
 	"devDependencies": {
+		"@changesets/cli": "^2.29.5",
 		"rollup": "^4.44.2",
 		"rollup-plugin-delete": "^3.0.1",
 		"rollup-plugin-typescript": "^1.0.1",
