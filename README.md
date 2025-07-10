@@ -42,9 +42,9 @@ A test for npm package
 2. `npx changeset init`
 3. change `"access": "restricted"` to `"access": "public"` in `.changeset/config.json`
 
-## github workflow
+## github workflows
 
-1. add new fil `github/workflow/release.yml`
+1. add new fil `.github/workflows/release.yml`
 2. add scripts in `package.json`: `"release-package": "npm run build && npx changeset publish"`
 
 ## github tokens and secrets
