@@ -34,3 +34,27 @@ A test for npm package
 4.1 `npm whoami`
 4.2 `npm login`
 4.3 `npm publish --access public`
+
+## @changesets/cli
+
+0. `git switch -c changesets-install`
+1. `npm i -D @changesets/cli`
+2. `npx changeset init`
+3. change `"access": "restricted"` to `"access": "public"` in `.changeset/config.json`
+
+## github workflow
+
+1. add new fil `github/workflow/release.yml`
+2. add scripts in `package.json`: `"release-package": "npm run build && npx changeset publish"`
+
+## github tokens and secrets
+
+1. github -> settings -> Developer Settings -> Personal access tokens -> Tokens (classic) (repo and workflow)
+2. a repo -> settings -> secrets and variables -> actions -> new repository secrets
+3. put the name of the secrets to release.yml
+
+## npm tokens
+
+1. npm -> access tokens -> name -> publish
+2. github step 2
+3. put the name of the secrets to release.yml
