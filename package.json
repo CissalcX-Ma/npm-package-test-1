@@ -36,9 +36,9 @@
 	"homepage": "https://github.com/CissalcX-Ma/npm-package-test-1#readme",
 	"devDependencies": {
 		"@changesets/cli": "^2.29.5",
+		"@rollup/plugin-typescript": "^12.1.4",
 		"rollup": "^4.44.2",
 		"rollup-plugin-delete": "^3.0.1",
-		"rollup-plugin-typescript": "^1.0.1",
 		"rollup-plugin-typescript2": "^0.36.0",
 		"typescript": "^5.8.3"
 	}

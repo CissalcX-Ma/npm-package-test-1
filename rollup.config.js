@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 import del from 'rollup-plugin-delete'
 export default {
   input: 'src/index.ts',
@@ -17,7 +17,6 @@ export default {
   plugins: [
     typescript({
       // tsconfig: './tsconfig.json',
-      useTsconfigDeclarationDir: true,
       // sourceMap: true,
       // inlineSources: true,
     }),
