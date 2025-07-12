@@ -1,6 +1,6 @@
 {
 	"name": "@madeji/npm-package-test-1",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A test for npm package",
 	"type": "module",
 	"main": "lib/index.cjs",
