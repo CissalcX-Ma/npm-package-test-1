@@ -74,7 +74,7 @@ A test for npm package.
 ## 6. publish with changesets
 
 0. a repo -> Settings -> Branches -> add classic branch protection rule -> name and Require a pull request before merging (not Require approvals)
-1. `npx changesets` (after changing our code, before committing)
-2. commit
+1. `npx changeset` (after changing our code, before committing)
+2. commit and push
 3. merge the PR created by committing
-4. merge the versioning PR created by changesets (new version, update changelog, delete the changeset created by changesets; will run changesets again, and publish (through github actions))
+4. merge the versioning PR created by changesets (Version Packages #n, with new version, updating changelog, deleting the changeset created by changesets; will run changesets again, and publish (through github actions), add a tag in github)
