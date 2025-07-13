@@ -59,13 +59,13 @@ A test for npm package.
 1. add new file `.github/workflows/release.yml`
 2. add scripts in `package.json`: `"release-package": "npm run build && npx changeset publish"` (for github actions to publish)
 
-## 5.1 github tokens and secrets
+### 5.1 github tokens and secrets
 
 1. github -> settings -> Developer Settings -> Personal access tokens -> Tokens (classic) (check repo and workflow)
 2. a repo -> settings -> secrets and variables -> actions -> new repository secrets
 3. put the name of the secrets to release.yml
 
-## 5.2 npm tokens
+### 5.2 npm tokens
 
 1. npm -> access tokens -> name -> publish
 2. github step 2
@@ -78,3 +78,30 @@ A test for npm package.
 2. commit and push
 3. merge the PR created by committing
 4. merge the versioning PR created by changesets (Version Packages #n, with new version, updating changelog, deleting the changeset created by changesets; will run changesets again, and publish (through github actions), add a tag in github)
+
+## 7. pre release
+
+### 7.1 link
+
+- provider: `npm link` (`npm run build` before linking) (`npm unlink -g`)
+- consumer: npm link provider-package-name
+
+(`npm root -g`)
+
+### 7.2 pre release
+
+1. setup pre-release branch
+   1. `git switch -c pre-release`
+   2. `npx changeset pre enter alpha`
+   3. `release.yml`: add `pre-release` the same level as `main` in branches
+   4. add, commit and push
+2. do your job in another branch
+   1. coding
+   2. `npx changeset` and commit and push
+3. merge
+   1. Open a PR to the pre-release branch and merge to it
+   2. automatically: changesets actions will opens a versioning PR in pre-release mode
+   3. merge this versioning PR (will create a alpha package)
+4. merge to main
+   1. switch to a new branch
+   2. exit the pre-release mode and open a PR to merge to the main branch
