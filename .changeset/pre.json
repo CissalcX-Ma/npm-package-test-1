@@ -5,6 +5,7 @@
     "@madeji/npm-package-test-1": "1.0.1"
   },
   "changesets": [
+    "curly-days-remain",
     "sixty-pets-dream"
   ]
 }
