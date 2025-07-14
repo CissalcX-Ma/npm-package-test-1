@@ -1,5 +1,11 @@
 # @madeji/npm-package-test-1
 
+## 1.1.0-alpha.1
+
+### Minor Changes
+
+- adcfc53: update
+
 ## 1.0.2-alpha.0
 
 ### Patch Changes
