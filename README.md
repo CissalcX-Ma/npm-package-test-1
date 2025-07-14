@@ -4,16 +4,15 @@ A test for npm package.
 
 ## 0. Create a git repository and a package
 
-0.1 `git init` or `git clone xxx`
-0.2 `.gitignore`: `lib` and `node_modules`
-0.3 `npm init` for `package.json` (`"type": "module"`)
-
-    - change name to `@your-name-space/package-name` (scoped package)
-    	- you need to run `npm publish --access public` (the first time)
+1. `git init` or `git clone xxx`
+2. `.gitignore`: `lib` and `node_modules`
+3. `npm init` for `package.json` (`"type": "module"`)
+   - change name to `@your-name-space/package-name` (scoped package)
+     - you need to run `npm publish --access public` (the first time)
 
 ## 1. `tsconfig.json` and source files
 
-1.1 `npx tsc --init` (tsconfig.json)
+1. `npx tsc --init` (tsconfig.json)
 
 ```json
 {
@@ -28,24 +27,27 @@ A test for npm package.
 }
 ```
 
-1.2 src: `ask.ts`, `answer.ts`, `index.ts`
+2. src: `ask.ts`, `answer.ts`, `index.ts`
 
 ## 2. rollup settings
 
-2.1 `npm i -D rollup @rollup/plugin-typescript rollup-plugin-delete`
-2.2 `rollup.config.js`: input, output (file, format), plugins
-2.3 `npm run build` (`"build": "rollup -c"`)
+1. `npm i -D rollup @rollup/plugin-typescript rollup-plugin-delete`
+2. `rollup.config.js`: input, output (file, format), plugins
+3. `npm run build` (`"build": "rollup -c"`)
 
 ## 3. publish settings
 
-3.1 update `package.json` with `exports` (what others can use your package) (`main` for CommonJS entry point, `module` or `browser` for esm entry point, and `types`. `exports` replaces esm and types)
-3.2 set `files` for publish (`npm publish --dry-run`: see the files)
+1. update `package.json` with `exports` (what others can use your package) (`main` for CommonJS entry point, `module` or `browser` for esm entry point, and `types`. `exports` replaces esm and types)
+2. set `files` for publish (`npm publish --dry-run`: see the files)
+   - default output files: `package.json`, `LICENSE`, `README.md`
 
-    - default output files: `package.json`, `LICENSE`, `README.md`
+npm:
 
-4.1 `npm whoami`
-4.2 `npm login`
-4.3 `npm publish --access public`
+0.1 `npm whoami`
+
+0.2 `npm login`
+
+1. `npm publish --access public`
 
 ## 4. @changesets/cli setup
 
@@ -95,7 +97,7 @@ A test for npm package.
    2. `npx changeset pre enter alpha`
    3. `release.yml`: add `pre-release` the same level as `main` in branches
    4. add, commit and push
-2. do your job in another branch
+2. do your job in another branch frome the pre-release branch
    1. coding
    2. `npx changeset` and commit and push
 3. merge
@@ -104,4 +106,7 @@ A test for npm package.
    3. merge this versioning PR (will create a alpha package)
 4. merge to main
    1. switch to a new branch
-   2. exit the pre-release mode and open a PR to merge to the main branch
+   2. exit the pre-release mode and open a PR to merge to the main branch (`npx changeset pre exit`)
+   3. add, commit and push
+   4. merge the exit branch to main
+   5. merge the PR of changesets to publish the new version
